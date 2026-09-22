@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+
 import { WebGLShader } from '@/components/ui/web-gl-shader'
 
 export function CiphersIntro() {
@@ -13,14 +14,13 @@ export function CiphersIntro() {
       <WebGLShader />
 
       <div className="absolute inset-0 bg-black/45" />
+
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.32)_55%,rgba(0,0,0,0.84)_100%)]" />
 
       <div className="relative z-10 flex min-h-screen items-center justify-center overflow-y-auto px-5 py-10">
         <div className="w-full max-w-3xl text-center">
-
           {/* Centered logo row */}
           <div className="mb-6 flex items-center justify-center gap-5 sm:gap-7">
-
             {/* AISSMS COE Logo */}
             <div className="relative rounded-full bg-black/30 p-2 backdrop-blur-sm">
               <Image
@@ -44,7 +44,6 @@ export function CiphersIntro() {
                 className="h-20 w-20 object-contain drop-shadow-[0_0_18px_rgba(255,214,10,0.35)] sm:h-24 sm:w-24"
               />
             </div>
-
           </div>
 
           <div>
@@ -64,17 +63,16 @@ export function CiphersIntro() {
           <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#FFC300]/70 to-transparent" />
 
           <p className="mx-auto mt-6 max-w-xl font-mono text-xs leading-6 tracking-wide text-white/50 sm:text-sm">
-<<<<<<< HEAD
-            Decode. Defend. Deploy. — CIPHERS — CIPHERS — CIPHERS
-=======
-            Decode. Defend. Deploy. — CIPHERS — CIPHERS — CIPHERS — CIPHERS — CIPHERS — CIPHERS — CIPHERS — CIPHERS — CIPHERS — CIPHERS
->>>>>>> 40a8c7b (test: update CIPHERS intro)
+            <em>Decode.</em> <em>Defend.</em> <em>Deploy.</em>{' '}
+            <em>—</em> CIPHERS <em>—</em> CIPHERS <em>—</em> CIPHERS{' '}
+            <em>—</em> CIPHERS <em>—</em> CIPHERS <em>—</em> CIPHERS{' '}
+            <em>—</em> CIPHERS <em>—</em> CIPHERS <em>—</em> CIPHERS{' '}
+            <em>—</em> CIPHERS
             <br />
           </p>
 
           {/* Action buttons */}
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-
             {/* Enter the Ciphers → Home */}
             <Link
               href="/home"
@@ -84,6 +82,7 @@ export function CiphersIntro() {
 
               <span className="relative flex items-center gap-3">
                 <span>Enter the Ciphers</span>
+
                 <span className="text-[#FFD60A] transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
@@ -97,9 +96,7 @@ export function CiphersIntro() {
             >
               LOGIN
             </Link>
-
           </div>
-
         </div>
       </div>
     </section>

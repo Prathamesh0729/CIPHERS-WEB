@@ -1,0 +1,245 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  color-scheme: dark;
+
+  --radius: 0.35rem;
+
+  /* =========================================================
+     CIPHERS CINEMATIC THEME
+     ========================================================= */
+
+  /* Main background */
+  --background: #050505;
+  --foreground: #f7f4ef;
+
+  /* Dark glass surfaces */
+  --card: #11100f;
+  --card-foreground: #f7f4ef;
+
+  --popover: #11100f;
+  --popover-foreground: #f7f4ef;
+
+  /* CIPHERS gold */
+  --primary: #ffc300;
+  --primary-foreground: #090807;
+
+  /* Warm structural color */
+  --secondary: #3a1710;
+  --secondary-foreground: #f7f4ef;
+
+  /* Muted surfaces */
+  --muted: #171311;
+  --muted-foreground: #aaa29a;
+
+  /* Highlight */
+  --accent: #ffd60a;
+  --accent-foreground: #090807;
+
+  /* Status */
+  --destructive: #7f1d1d;
+
+  /* Warm glass borders */
+  --border: rgba(255, 180, 90, 0.16);
+  --input: rgba(255, 180, 90, 0.22);
+
+  /* Gold focus */
+  --ring: rgba(255, 214, 10, 0.65);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    background:
+      radial-gradient(
+        circle at 70% 10%,
+        rgba(255, 75, 20, 0.055),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 20% 45%,
+        rgba(255, 145, 30, 0.035),
+        transparent 30%
+      ),
+      #050505;
+  }
+
+  ::selection {
+    background: rgba(255, 195, 0, 0.25);
+    color: #ffffff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* =========================================================
+   CIPHERS TEXT GLOW
+   ========================================================= */
+
+@utility text-glow {
+  text-shadow:
+    0 0 8px rgba(255, 195, 0, 0.55),
+    0 0 18px rgba(255, 150, 40, 0.30),
+    0 0 35px rgba(255, 70, 20, 0.16);
+}
+
+/* =========================================================
+   CINEMATIC GRID
+   ========================================================= */
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(
+      rgba(255, 195, 0, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 100, 30, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 44px 44px;
+}
+
+/* =========================================================
+   CINEMATIC GLASS CARD
+   ========================================================= */
+
+@utility rgb-card {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 195, 0, 0.055),
+      rgba(255, 90, 20, 0.025),
+      rgba(0, 0, 0, 0.15)
+    ),
+    rgba(15, 12, 10, 0.76);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 195, 0, 0.08),
+    0 10px 45px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(255, 80, 20, 0.035);
+
+  backdrop-filter: blur(14px);
+}
+
+/* =========================================================
+   CINEMATIC BORDER
+   ========================================================= */
+
+@utility rgb-border {
+  border-image:
+    linear-gradient(
+      90deg,
+      rgba(255, 195, 0, 0.42),
+      rgba(255, 100, 30, 0.30),
+      rgba(255, 214, 10, 0.42)
+    )
+    1;
+}
+
+/* =========================================================
+   CIPHERS GOLD BUTTON
+   ========================================================= */
+
+@utility rgb-button {
+  background:
+    linear-gradient(
+      100deg,
+      #ffc300,
+      #ffd60a
+    );
+
+  box-shadow:
+    0 0 18px rgba(255, 214, 10, 0.22),
+    0 0 35px rgba(255, 85, 20, 0.10);
+
+  transition:
+    box-shadow 300ms ease,
+    filter 300ms ease,
+    transform 300ms ease;
+}
+
+/* =========================================================
+   CINEMATIC SECTION ATMOSPHERE
+   ========================================================= */
+
+@utility cinematic-glow {
+  background:
+    radial-gradient(
+      circle at 70% 45%,
+      rgba(255, 70, 20, 0.13),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 30% 70%,
+      rgba(255, 150, 30, 0.07),
+      transparent 30%
+    );
+}
+
+/* =========================================================
+   WARM DIVIDER
+   ========================================================= */
+
+@utility cinematic-divider {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 195, 0, 0.65),
+      rgba(255, 80, 20, 0.45),
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(255, 150, 30, 0.18);
+}

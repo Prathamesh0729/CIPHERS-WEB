@@ -52,7 +52,8 @@ export function CiphersIntro() {
             </p>
 
             <p className="mx-auto mt-3 max-w-2xl font-mono text-[8px] font-medium uppercase leading-5 tracking-[0.18em] text-[#FFD60A]/85 drop-shadow-[0_0_10px_rgba(255,214,10,0.45)] sm:text-[10px] sm:tracking-[0.25em]">
-              Club for Innovation, Programming, Higher Education, Research and Startups
+              Club for Innovation, Programming, Higher Education, Research and
+              Startups
             </p>
           </div>
 
@@ -63,11 +64,7 @@ export function CiphersIntro() {
           <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#FFC300]/70 to-transparent" />
 
           <p className="mx-auto mt-6 max-w-xl font-mono text-xs leading-6 tracking-wide text-white/50 sm:text-sm">
-            <em>Decode.</em> <em>Defend.</em> <em>Deploy.</em>{' '}
-            <em>—</em> CIPHERS <em>—</em> CIPHERS <em>—</em> CIPHERS{' '}
-            <em>—</em> CIPHERS <em>—</em> CIPHERS <em>—</em> CIPHERS{' '}
-            <em>—</em> CIPHERS <em>—</em> CIPHERS <em>—</em> CIPHERS{' '}
-            <em>—</em> CIPHERS
+            <em>Decode.</em> <em>Defend.</em> <em>Deploy.
             <br />
           </p>
 

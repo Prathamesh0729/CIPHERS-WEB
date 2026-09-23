@@ -4,6 +4,42 @@ import { ArrowLeft, CalendarDays, Mail, Users } from 'lucide-react'
 
 import type { Department } from '@/lib/content'
 
+const maleNames = new Set([
+  'Dr. A. Kulkarni',
+  'Prof. S. Deshmukh',
+  'Rohan Shinde',
+  'Karan Patil',
+  'Ankit More',
+  'Vivek Dhage',
+  'Harsh Sawant',
+  'Manas Gokhale',
+  'Aman Ansari',
+  'Siddharth Kamat',
+  'Om Pawar',
+  'Varun Iyer',
+  'Saurabh Nikam',
+  'Farhan Syed',
+  'Ajinkya Kadam',
+  'Arjun Bhide',
+  'Nikhil Thorat',
+  'Devang Gupta',
+])
+
+const maleImages = Array.from(
+  { length: 15 },
+  (_, index) => `/team/team-${String(index + 1).padStart(2, '0')}.jpg`,
+)
+
+const femaleImages = Array.from(
+  { length: 15 },
+  (_, index) => `/team/team-${String(index + 16).padStart(2, '0')}.jpg`,
+)
+
+function getProfileImage(name: string, index: number) {
+  const images = maleNames.has(name) ? maleImages : femaleImages
+  return images[index % images.length]
+}
+
 type DepartmentPageProps = {
   department: Department
 }
@@ -142,10 +178,8 @@ export function DepartmentPage({ department }: DepartmentPageProps) {
                     "
                   >
                     <Image
-                      src={`/team/team-${String(
-                        (department.key.length + person.name.length) % 30 + 1
-                      ).padStart(2, '0')}.jpg`}
-                      alt=""
+                      src={getProfileImage(person.name, person.name.length)}
+                      alt={`${person.name} profile`}
                       fill
                       sizes="64px"
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -230,10 +264,8 @@ export function DepartmentPage({ department }: DepartmentPageProps) {
                     "
                   >
                     <Image
-                      src={`/team/team-${String(
-                        (department.key.length + member.name.length) % 30 + 1
-                      ).padStart(2, '0')}.jpg`}
-                      alt=""
+                      src={getProfileImage(member.name, member.name.length)}
+                      alt={`${member.name} profile`}
                       fill
                       sizes="44px"
                       className="object-cover transition-transform duration-500 group-hover:scale-110"

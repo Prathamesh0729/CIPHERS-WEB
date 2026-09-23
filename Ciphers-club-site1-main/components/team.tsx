@@ -4,6 +4,42 @@ import { council, faculty } from '@/lib/content'
 import { SectionHeading } from './section-heading'
 import { Reveal } from './reveal'
 
+const maleNames = new Set([
+  'Dr. A. Kulkarni',
+  'Prof. S. Deshmukh',
+  'Rohan Shinde',
+  'Karan Patil',
+  'Ankit More',
+  'Vivek Dhage',
+  'Harsh Sawant',
+  'Manas Gokhale',
+  'Aman Ansari',
+  'Siddharth Kamat',
+  'Om Pawar',
+  'Varun Iyer',
+  'Saurabh Nikam',
+  'Farhan Syed',
+  'Ajinkya Kadam',
+  'Arjun Bhide',
+  'Nikhil Thorat',
+  'Devang Gupta',
+])
+
+const maleImages = Array.from(
+  { length: 15 },
+  (_, index) => `/team/team-${String(index + 1).padStart(2, '0')}.jpg`,
+)
+
+const femaleImages = Array.from(
+  { length: 15 },
+  (_, index) => `/team/team-${String(index + 16).padStart(2, '0')}.jpg`,
+)
+
+function getProfileImage(person: Person, index: number) {
+  const images = maleNames.has(person.name) ? maleImages : femaleImages
+  return images[index % images.length]
+}
+
 function PersonCard({
   person,
   index,
@@ -33,8 +69,8 @@ function PersonCard({
             "
           >
             <Image
-              src={`/team/team-${String((index % 30) + 1).padStart(2, '0')}.jpg`}
-              alt=""
+              src={getProfileImage(person, index)}
+              alt={`${person.name} profile`}
               fill
               sizes="64px"
               className="object-cover transition-transform duration-500 group-hover:scale-110"

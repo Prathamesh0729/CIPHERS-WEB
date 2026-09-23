@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { Person } from '@/lib/content'
 import { council, faculty } from '@/lib/content'
 import { SectionHeading } from './section-heading'
@@ -24,17 +25,20 @@ function PersonCard({
         <div className="flex items-start gap-4">
           <div
             className="
-              flex size-16 shrink-0 items-center justify-center rounded-full
+              relative size-16 shrink-0 overflow-hidden rounded-full
               border border-border bg-background
-              font-mono text-xl font-bold text-primary
               transition-all duration-300
               group-hover:border-accent/60
-              group-hover:text-accent
               group-hover:shadow-[0_0_22px_rgba(255,214,10,0.18)]
             "
-            aria-hidden="true"
           >
-            {person.initials}
+            <Image
+              src={`/team/team-${String((index % 30) + 1).padStart(2, '0')}.jpg`}
+              alt=""
+              fill
+              sizes="64px"
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+            />
           </div>
 
           <div className="min-w-0 text-left">

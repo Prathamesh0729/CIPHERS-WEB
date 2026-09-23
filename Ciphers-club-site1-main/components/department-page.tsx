@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, CalendarDays, Mail, Users } from 'lucide-react'
 
@@ -134,12 +135,21 @@ export function DepartmentPage({ department }: DepartmentPageProps) {
                 <div className="flex items-start gap-4">
                   <div
                     className="
-                      flex size-16 shrink-0 items-center justify-center
-                      rounded-full border border-border bg-background
-                      font-mono text-xl font-bold text-primary
+                      relative size-16 shrink-0 overflow-hidden rounded-full
+                      border border-border bg-background
+                      transition-all duration-300
+                      group
                     "
                   >
-                    {person.initials}
+                    <Image
+                      src={`/team/team-${String(
+                        (department.key.length + person.name.length) % 30 + 1
+                      ).padStart(2, '0')}.jpg`}
+                      alt=""
+                      fill
+                      sizes="64px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                   </div>
 
                   <div>
@@ -212,13 +222,22 @@ export function DepartmentPage({ department }: DepartmentPageProps) {
                 <div className="flex items-center gap-3">
                   <div
                     className="
-                      flex size-11 shrink-0 items-center justify-center
-                      rounded-full border border-border bg-background
-                      font-mono text-sm font-bold text-primary
-                      group-hover:text-accent
+                      relative size-11 shrink-0 overflow-hidden rounded-full
+                      border border-border bg-background
+                      transition-all duration-300
+                      group-hover:border-accent/60
+                      group-hover:shadow-[0_0_18px_rgba(255,214,10,0.18)]
                     "
                   >
-                    {member.initials}
+                    <Image
+                      src={`/team/team-${String(
+                        (department.key.length + member.name.length) % 30 + 1
+                      ).padStart(2, '0')}.jpg`}
+                      alt=""
+                      fill
+                      sizes="44px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                   </div>
 
                   <div className="min-w-0">

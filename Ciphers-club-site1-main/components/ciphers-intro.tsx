@@ -19,8 +19,10 @@ export function CiphersIntro() {
 
       <div className="relative z-10 flex min-h-screen items-center justify-center overflow-y-auto px-5 py-10">
         <div className="w-full max-w-3xl text-center">
+
           {/* Centered logo row */}
           <div className="mb-6 flex items-center justify-center gap-5 sm:gap-7">
+
             {/* AISSMS COE Logo */}
             <div className="relative rounded-full bg-black/30 p-2 backdrop-blur-sm">
               <Image
@@ -46,6 +48,7 @@ export function CiphersIntro() {
             </div>
           </div>
 
+          {/* College heading */}
           <div>
             <p className="font-mono text-[9px] uppercase tracking-[0.35em] text-white/55 sm:text-[11px] sm:tracking-[0.45em]">
               AISSMS College of Engineering presents
@@ -57,20 +60,24 @@ export function CiphersIntro() {
             </p>
           </div>
 
+          {/* Main title */}
           <h1 className="mt-8 font-sans text-6xl font-black tracking-[-0.07em] text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.12)] sm:text-7xl md:text-8xl lg:text-[9rem]">
             CIPHERS
           </h1>
 
+          {/* Divider */}
           <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-[#FFC300]/70 to-transparent" />
 
+          {/* Tagline */}
           <p className="mx-auto mt-6 max-w-xl font-mono text-xs leading-6 tracking-wide text-white/50 sm:text-sm">
             <em>Decode.</em> <em>Defend.</em> <em>Deploy.</em>
             <br />
           </p>
 
           {/* Action buttons */}
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            {/* Enter the Ciphers → Home */}
+          <div className="mt-12 flex flex-col items-center justify-center gap-4">
+
+            {/* Enter the Ciphers */}
             <Link
               href="/home"
               className="group relative overflow-hidden rounded-full border border-white/25 bg-white/[0.07] px-9 py-4 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-white backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-[#FFD60A]/60 hover:bg-white/[0.12] hover:shadow-[0_0_35px_rgba(255,214,10,0.20)] active:scale-[0.98]"
@@ -86,13 +93,14 @@ export function CiphersIntro() {
               </span>
             </Link>
 
-            {/* Login → Login Page */}
+            {/* Login */}
             <Link
               href="/login"
               className="rounded-full border border-[#FFD60A]/50 bg-[#FFD60A]/[0.06] px-8 py-4 font-mono text-xs font-semibold uppercase tracking-[0.25em] text-[#FFD60A] backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:border-[#FFD60A] hover:bg-[#FFD60A]/[0.12] hover:shadow-[0_0_30px_rgba(255,214,10,0.15)] active:scale-[0.98]"
             >
               LOGIN
             </Link>
+
           </div>
         </div>
       </div>
